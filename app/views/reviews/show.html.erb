@@ -1,0 +1,14 @@
+<% content_for(:author, @review.author) %>
+<% content_for(:content_body, @review.content_body) %>
+<% content_for(:rating, @review.rating) %>
+
+<h1><%= @review.author %></h1>
+<h1><%= @review.content_body %></h1>
+<h1><%= @review.rating %></h1>
+
+
+<h3><a href="/products">Products</a></h3>
+
+<%= link_to "Delete", product_review_path(@review),
+                                 :data => {:confirm => "Are you sure?",
+                                                    :method => "delete"} %>

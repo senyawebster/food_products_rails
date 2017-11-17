@@ -1,0 +1,12 @@
+<%= form_for [@product, @review] do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+
+  <%= f.label :content_body %>
+  <%= f.text_field :content_body %>
+
+  <%= f.label :rating %>
+  <%= range_field(:rating, in: 1..5) %>
+
+  <%= f.submit %>
+<% end %>

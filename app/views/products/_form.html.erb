@@ -3,7 +3,7 @@
   <%= p.text_field :name %>
 
   <%= p.label :cost %>
-  <%= p.number_field(:cost, :price, in: 1.0..100.0, step: 0.01) %>
+  <%= p.number_field(:cost, in: 1.0..100.0) %>
 
 
   <%= p.label :country_of_origin %>
