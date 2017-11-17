@@ -1,0 +1,22 @@
+<% content_for(:name, @product.name) %>
+<h1><%= @product.name %></h1>
+
+<% if @product.reviews.any? %>
+  <% @product.reviews.each do |review| %>
+    <p>
+      <%= link_to review.rating, product_review_path(@product, review)%>,
+    </p>
+  <% end %>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
+
+<%= link_to "Add Review", new_product_review_path(@product) %>
+
+<%= render "form" %>
+
+<h3><a href="/products">Products</a></h3>
+
+<%= link_to "Delete", product_path(@product),
+                                 :data => {:confirm => "Are you sure?",
+                                                    :method => "delete"} %>
