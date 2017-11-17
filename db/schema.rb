@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20171117181007) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.integer "cost"
-    t.integer "country_of_origin"
+    t.string "country_of_origin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20171117181007) do
     t.string "author"
     t.text "content_body"
     t.integer "rating"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
