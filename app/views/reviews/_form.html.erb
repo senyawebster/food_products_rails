@@ -1,12 +1,27 @@
-<%= form_for [@product, @review] do |f| %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
+<div class="well">
+  <div class="well-body">
 
-  <%= f.label :content_body %>
-  <%= f.text_field :content_body %>
+    <%= form_for [@product, @review] do |f| %>
+      <%= f.label :author %>
+      <%= f.text_field :author %>
+    <br>
+      <%= f.label :content_body %>
+      <%= f.text_field :content_body %>
+    <br>
+      <%= f.label :rating %>
+      <%= radio_button_tag(:rating, "1") %>
+      <%= label_tag(:rating, "1") %>
+      <%= radio_button_tag(:rating, "2") %>
+      <%= label_tag(:rating, "2") %>
+      <%= radio_button_tag(:rating, "3") %>
+      <%= label_tag(:rating, "3") %>
+      <%= radio_button_tag(:rating, "4") %>
+      <%= label_tag(:rating, "4") %>
+      <%= radio_button_tag(:rating, "5") %>
+      <%= label_tag(:rating, "5") %>
+    <br>
+      <%= f.submit %>
+    <% end %>
 
-  <%= f.label :rating %>
-  <%= range_field(:rating, in: 1..5) %>
-
-  <%= f.submit %>
-<% end %>
+  </div>
+</div>
