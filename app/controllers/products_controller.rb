@@ -4,8 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def home
-    @products = Product.order('created_at DESC')
-    @wantedproducts = @products(:limit => '3')
+    @lastproducts = Product.order(created_at: :desc).limit(3)
   end
 
   def show

@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-  default_scope { order(updated_at: :desc) }
 
   has_many :reviews
 
