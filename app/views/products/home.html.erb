@@ -1,0 +1,8 @@
+<% content_for(:name, "Products") %>
+<h1>This is the landing page</h1>
+
+<h2>These are the currently featured products</h2>
+
+<% @wantedproducts.each do |product| %>
+  <div class="well"><%= link_to product.id, product_path(product) %> </div>
+  <% end %>

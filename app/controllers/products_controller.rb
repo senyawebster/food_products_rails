@@ -3,6 +3,11 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def home
+    @products = Product.order('created_at DESC')
+    @wantedproducts = @products(:limit => '3')
+  end
+
   def show
     @product = Product.find(params[:id])
     @reviews = @product.reviews
