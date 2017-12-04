@@ -6,13 +6,12 @@ class ProductsController < ApplicationController
   def home
     @lastproducts = Product.order(created_at: :desc).limit(3)
 
-    @mostreviewed = Product.select("products.name, products.cost, products.country_of_origin, count(reviews.id) as reviews_count")
+    @mostreviewed = Product.select("products.id, products.name, products.cost, products.country_of_origin, count(reviews.id) as reviews_count")
     .joins(:reviews)
     .group("products.id")
     .order("reviews_count DESC")
     .limit(1)
-
-
+    
   end
 
   def show

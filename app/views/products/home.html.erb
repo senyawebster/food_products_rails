@@ -11,8 +11,5 @@
 <hr>
 <h2>This is the most reviewed product</h2>
 
-<% @mostreviewed.each do |product| %>
-  <div class="well"><%= link_to product.name, product_path(product) %> </div>
-<% end %>
 
-<%= @mostreviewed %>
+<div class="well"><%= link_to @mostreviewed.name, product_path(@mostreviewed) %> </div>
