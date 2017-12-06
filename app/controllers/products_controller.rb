@@ -1,17 +1,15 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    if params[:sort] == "domestic"
+      @products = Product.domestic
+    else
+      @products = Product.all
+    end
   end
 
   def home
-    @lastproducts = Product.order(created_at: :desc).limit(3)
-
-    @mostreviewed = Product.select("products.id, products.name, products.cost, products.country_of_origin, count(reviews.id) as reviews_count")
-    .joins(:reviews)
-    .group("products.id")
-    .order("reviews_count DESC")
-    .limit(1)
-    
+    @lastproducts = Product.recent
+    @mostreviewed = Product.mostreviewed
   end
 
   def show

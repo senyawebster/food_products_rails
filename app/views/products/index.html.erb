@@ -3,6 +3,8 @@
 <div class="container">
   <h1>Products</h1>
 
+  <a href="?sort=domestic"><button class="btn">Domestic Products</button></a>
+  <button class="btn"><%= link_to "All Products", products_path %></button>
 
     <% @products.each do |product| %>
       <div class="well"><%= link_to product.name, product_path(product) %> </div>
